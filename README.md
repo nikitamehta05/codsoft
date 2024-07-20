@@ -26,7 +26,7 @@ TASK 1:
     print("4.div(/)")
     choice=input("Enter your choice(1,2,3,4):")
     CALCULATOR()
-
+TASK 2:
 #Python code for a password generator application:
 
     import random
@@ -49,6 +49,50 @@ TASK 1:
       password = ''.join(random.choice(characters) for _ in range(length))
       print("Generated Password: ", password)
      password_generator()
+
+TASK 3:
+#Python code for a Rock-Paper-Scissors game:
+
+     import random
+
+    def play_game():
+     while True:
+      user_choice = input("Enter your choice (rock/paper/scissors) or 'q' to quit: ").lower()
+      if user_choice == 'q':
+       break
+
+     if user_choice not in ['rock', 'paper', 'scissors']:
+      print("Invalid choice. Please enter rock, paper, or scissors.")
+      continue
+
+     computer_choice = random.choice(['rock', 'paper', 'scissors'])
+     print(f"\nComputer chose: {computer_choice}\n")
+
+     if user_choice == computer_choice:
+      print(f"Both players selected {user_choice}. It's a tie!")
+     elif user_choice == 'rock':
+      if computer_choice == 'scissors':
+        print("Rock smashes scissors! You win!")
+      else:
+        print("Paper covers rock! You lose.")
+     elif user_choice == 'paper':
+      if computer_choice == 'rock':
+        print("Paper covers rock! You win!")
+      else:
+        print("Scissors cuts paper! You lose.")
+     elif user_choice == 'scissors':
+      if computer_choice == 'paper':
+        print("Scissors cuts paper! You win!")
+      else:
+        print("Rock smashes scissors! You lose.")
+
+     play_again = input("\nPlay again? (yes/no): ")
+     if play_again.lower() != 'yes':
+      break
+
+    play_game()
+
+
 
 
 
