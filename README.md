@@ -27,4 +27,29 @@ TASK 1:
     choice=input("Enter your choice(1,2,3,4):")
     CALCULATOR()
 
+#Python code for a password generator application:
+
+    import random
+    import string
+
+    def password_generator():
+      length = int(input("Enter the desired length of the password (8-200): "))
+      if length < 8 or length > 200:
+       print("Password length must be between 8 and 20 characters.")
+       return
+
+      complexity = input("Choose password complexity (weak/medium/strong): ")
+
+      characters = string.ascii_lowercase
+       if complexity in ['medium', 'strong']:
+         characters += string.ascii_uppercase
+       if complexity in ['strong']:
+        characters += string.digits + string.punctuation
+
+      password = ''.join(random.choice(characters) for _ in range(length))
+      print("Generated Password: ", password)
+     password_generator()
+
+
+
 
